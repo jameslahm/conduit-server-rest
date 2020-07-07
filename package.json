@@ -1,0 +1,54 @@
+{
+	"name": "conduit-server-rest",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "yarn build && node ./dist/server.js",
+		"build": "tsc --build",
+		"test": "wait-on http-get://localhost:3000/api/articles && cross-env APIURL=http://localhost:3000/api ./run-api-tests.sh"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"lint-staged": {
+		"*.{ts}": "prettier --write"
+	},
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"dotenv": "^8.2.0",
+		"express": "^5.0.0-alpha.8",
+		"express-validator": "^6.6.0",
+		"http-assert": "^1.4.1",
+		"jsonwebtoken": "^8.5.1",
+		"mongoose": "^5.9.21",
+		"mongoose-unique-validator": "^2.0.3",
+		"morgan": "^1.10.0",
+		"rotating-file-stream": "^2.1.2",
+		"slug": "^3.3.0"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^9.0.1",
+		"@commitlint/config-conventional": "^9.0.1",
+		"@types/bcryptjs": "^2.4.2",
+		"@types/express": "^4.17.6",
+		"@types/http-assert": "^1.5.1",
+		"@types/jsonwebtoken": "^8.5.0",
+		"@types/mongoose": "^5.7.29",
+		"@types/mongoose-unique-validator": "^1.0.4",
+		"@types/morgan": "^1.9.1",
+		"@types/slug": "^0.9.1",
+		"apidoc": "^0.23.0",
+		"cross-env": "^7.0.2",
+		"husky": "^4.2.5",
+		"lint-staged": "^10.2.11",
+		"newman": "^5.1.0",
+		"prettier": "^2.0.5",
+		"typescript": "^3.9.6",
+		"wait-on": "^5.0.1"
+	}
+}
