@@ -6,7 +6,6 @@ dotenv.config({
 	path: path.resolve(__dirname, '../../.env'),
 });
 
-
 // Constant response string
 
 // 401

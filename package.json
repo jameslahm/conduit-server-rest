@@ -44,11 +44,11 @@
 		"@types/slug": "^0.9.1",
 		"apidoc": "^0.23.0",
 		"cross-env": "^7.0.2",
-		"husky": "^4.2.5",
 		"lint-staged": "^10.2.11",
 		"newman": "^5.1.0",
 		"prettier": "^2.0.5",
 		"typescript": "^3.9.6",
-		"wait-on": "^5.0.1"
+    "wait-on": "^5.0.1",
+    "husky": "^4.2.5"
 	}
 }
